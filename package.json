@@ -1,0 +1,23 @@
+{
+  "name": "@formizeflow/chrome-extension",
+  "version": "0.1.0",
+  "description": "FormFlow forms in Chrome and Firefox extensions (Manifest V3): popup, side panel and options page forms, welcome on install, uninstall survey, onboarding A/B tests.",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/formizeflow/formflow-chrome-extension.git" },
+  "homepage": "https://github.com/formizeflow/formflow-chrome-extension#readme",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js", "require": "./dist/index.cjs" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "keywords": ["formflow", "chrome-extension", "manifest-v3", "webextension", "survey", "onboarding", "uninstall-survey"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": { "@types/node": "^22.10.0", "tsup": "^8.3.0", "typescript": "^5.7.0", "vitest": "^4.1.11" },
+  "publishConfig": { "access": "public", "provenance": true }
+}
